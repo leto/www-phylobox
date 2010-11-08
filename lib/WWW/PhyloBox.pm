@@ -41,10 +41,9 @@ This talks to PhyloBox
 
 sub create {
     my ($self, %args) = @_;
-
     my $response = $self->ua->post(
-        $self->base_url . "/tree/edit",
-        %args,
+        $self->base_url . "/new",
+        \%args,
     );
     warn Dumper [ $response ];
 }
