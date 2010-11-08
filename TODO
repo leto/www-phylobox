@@ -1,0 +1,3 @@
+
+* Don't hit a live site in the test suite
+* provide an env var to choose which site to hit
