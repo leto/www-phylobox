@@ -11,7 +11,6 @@ isa_ok($phylobox, 'WWW::PhyloBox');
 
 lives_ok {
     $phylobox->create(
-        method    => "newick",
         phyloFile => $newick,
         response  => "key",
     )

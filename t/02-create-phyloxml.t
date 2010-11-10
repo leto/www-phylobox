@@ -13,7 +13,6 @@ my $phyloxml = slurp("t/data/test.xml");
 
     lives_ok {
         $phylobox->create(
-            method    => "phyloxml",
             phyloFile => $phyloxml,
             response  => "key",
         )
