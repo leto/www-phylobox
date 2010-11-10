@@ -3,6 +3,8 @@ package WWW::PhyloBox;
 use Moose;
 use LWP::UserAgent;
 use Data::Dumper;
+use JSON::Any;
+use WWW::PhyloBox::Response;
 
 has base_url => (
     isa     => 'Str',
@@ -16,6 +18,11 @@ has useragent_class => (
 );
 has useragent_args  => ( isa => 'HashRef', is => 'ro', default => sub { {} } );
 
+has json => (
+    isa => 'JSON::Any',
+    is  => 'ro',
+    default => sub { JSON::Any->new },
+);
 sub BUILD {
     my ($self) = @_;
     $self->ua( LWP::UserAgent->new );
@@ -62,7 +69,8 @@ sub create {
         $self->base_url . "/new",
         \%args,
     );
-    warn Dumper [ $response ];
+    my $json = $self->json->from_json( $response->content );
+    return WWW::PhyloBox::Response->new( json => $json );
 }
 
 1;
