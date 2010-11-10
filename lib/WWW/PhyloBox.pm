@@ -28,13 +28,18 @@ has ua => (
 
 # ABSTRACT: eats babies
 
+=head1 NAME
+
+WWW::PhyloBox - Perl interface to phylobox.appspot.com
+
 =head1 SYNOPSIS
 
-Stuff
+    use WWW::PhyloBox;
+    my $phylobox = WWW::PhyloBox->new;
 
 =head1 ABSTRACT
 
-This talks to PhyloBox
+PhyloBox is an online environment for viewing, editing, sharing, and publishing phylogenetic trees.
 
 =cut
 
