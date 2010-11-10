@@ -36,10 +36,16 @@ WWW::PhyloBox - Perl interface to phylobox.appspot.com
 
     use WWW::PhyloBox;
     my $phylobox = WWW::PhyloBox->new;
+    $phylobox->create(
+        phyloUrl => "http://example.com/phylo.xml",
+        response  => "key",
+    );
 
 =head1 ABSTRACT
 
-PhyloBox is an online environment for viewing, editing, sharing, and publishing phylogenetic trees.
+PhyloBox is an online environment for viewing, editing, sharing, and publishing
+phylogenetic trees. The preferred data format for importing phylogenetic trees
+is PhyloXML, but the Newick format is also marginally supported.
 
 =cut
 
