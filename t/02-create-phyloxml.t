@@ -1,9 +1,10 @@
 use Test::Most;
 use WWW::PhyloBox;
+use Carp::Always;
 
 use File::Slurp qw/slurp/;
 
-plan( tests => 3 );
+plan( tests => 4 );
 
 my $phylobox = WWW::PhyloBox->new;
 my $phyloxml = slurp("t/data/test.xml");
@@ -11,19 +12,20 @@ my $phyloxml = slurp("t/data/test.xml");
 {
     isa_ok($phylobox, 'WWW::PhyloBox');
 
+    my $response;
     lives_ok {
-        $phylobox->create(
+        $response = $phylobox->create(
             phyloFile => $phyloxml,
             response  => "key",
         )
-    }, 'creating phyloxml';
+    };
+    isa_ok($response, 'WWW::PhyloBox::Response');
 }
 
 {
     my $phyloxml = slurp("t/data/phylo.xml");
     lives_ok {
         $phylobox->create(
-            method    => "phyloxml",
             phyloFile => $phyloxml,
             response  => "key",
         )
