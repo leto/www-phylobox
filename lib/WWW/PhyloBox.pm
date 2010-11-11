@@ -42,11 +42,29 @@ WWW::PhyloBox - Perl interface to phylobox.appspot.com
 =head1 SYNOPSIS
 
     use WWW::PhyloBox;
+    use File::Slurp qw/slurp/;
+
     my $phylobox = WWW::PhyloBox->new;
-    $phylobox->create(
+
+    # this creates a phylogenetic tree from a remote file
+    my $tree1 = $phylobox->create(
         phyloUrl => "http://example.com/phylo.xml",
-        response  => "key",
+        response => "key",
+        name     => "Moose speciation",
     );
+    print $tree1->name . " tree is at " . $tree1->url . "\n";
+
+    # read in PhyloXML to a string
+    my $phyloxml = slurp("phylo.xml");
+
+    # this creates a phylogenetic tree from string data
+    my $tree2 = $phylobox->create(
+        phyloFile => $phyloxml,
+        response  => "key",
+        name      => "T. Rex speciation",
+    );
+
+    print $tree2->name " has a key of " . $tree2->key . "\n";
 
 =head1 ABSTRACT
 
