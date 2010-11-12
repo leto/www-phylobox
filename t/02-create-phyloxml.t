@@ -4,7 +4,7 @@ use Carp::Always;
 
 use File::Slurp qw/slurp/;
 
-plan( tests => 4 );
+plan( tests => 5 );
 
 my $phylobox = WWW::PhyloBox->new;
 my $phyloxml = slurp("t/data/test.xml");
@@ -25,11 +25,13 @@ my $phyloxml = slurp("t/data/test.xml");
 {
     local $TODO = "PhyloBox does not support multiple phylogenies in one PhyloXML";
     my $phyloxml = slurp("t/data/phylo.xml");
+    my $response;
     lives_ok {
-        $phylobox->create(
+        $response = $phylobox->create(
             phyloFile => $phyloxml,
             response  => "key",
         )
     }, 'creating phyloxml';
+    isa_ok($response, 'WWW::PhyloBox::Response');
     # need to check return code
 }
