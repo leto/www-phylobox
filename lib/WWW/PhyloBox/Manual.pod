@@ -13,9 +13,9 @@ WWW::PhyloBox - Perl interface to phylobox.appspot.com
 
     # this creates a phylogenetic tree from a remote file
     my $tree1 = $phylobox->create(
-        phyloUrl => "http://example.com/phylo.xml",
+        phyloUrl => 'http://www.phyloxml.org/examples/apaf.xml',
         response => "key",
-        name     => "Moose speciation",
+        name     => 'Apaf-1 gene family tree with domain architectures',
     );
     print $tree1->name . " tree is at " . $tree1->url . "\n";
 
@@ -52,7 +52,7 @@ This example sets the API root, in the case of the developer wanting to talk to 
     my $tree = $phylobox->create(
         phyloUrl => "http://example.com/phylo.xml.zip",
         response => "key",
-        name     => "Moose speciation",
+        name     => 'A really big phylogenetic tree',
     );
     print $tree->name . " tree is at " . $tree->url . "\n";
 
