@@ -41,50 +41,13 @@ WWW::PhyloBox - Perl interface to phylobox.appspot.com
 
 =head1 SYNOPSIS
 
-    use WWW::PhyloBox;
-    use File::Slurp qw/slurp/;
-
-    my $phylobox = WWW::PhyloBox->new;
-
-    # this creates a phylogenetic tree from a remote file
-    my $tree1 = $phylobox->create(
-        phyloUrl => "http://example.com/phylo.xml",
-        response => "key",
-        name     => "Moose speciation",
-    );
-    print $tree1->name . " tree is at " . $tree1->url . "\n";
-
-    # read in PhyloXML to a string
-    my $phyloxml = slurp("phylo.xml");
-
-    # this creates a phylogenetic tree from string data
-    my $tree2 = $phylobox->create(
-        phyloFile => $phyloxml,
-        response  => "key",
-        name      => "T. Rex speciation",
-    );
-
-    print $tree2->name " has a key of " . $tree2->key . "\n";
+Please see WWW::PhyloBox::Manual for code examples.
 
 =head1 ABSTRACT
 
 PhyloBox is an online environment for viewing, editing, sharing, and publishing
 phylogenetic trees. The preferred data format for importing phylogenetic trees
 is PhyloXML, but the Newick format is also marginally supported.
-
-
-=head1 ACKNOWLEDGEMENTS
-
-This software was initially written at the GMOD Evolutionary Biology Hackathon
-2010 at the National Evolutionary Synthesis Center (NESCent) in Durham, NC.
-
-=head1 LINKS
-
-http://phylobox.appspot.com
-
-https://github.com/andrewxhill/PhyloBox/wiki
-
-http://nescent.org
 
 =cut
 
