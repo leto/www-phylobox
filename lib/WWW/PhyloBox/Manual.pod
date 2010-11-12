@@ -77,6 +77,10 @@ The PhyloJSON spec
 
 L<http://phylobox.appspot.com/phylojson/version/1>
 
+Hominid Phylogenetic Tree in PhyloBox
+
+L<http://2-0.latest.phylobox.appspot.com/#phylobox-2-0-f7fd33b2-932a-497a-9652-4732e1a3110f>
+
 =cut
 
 1;
