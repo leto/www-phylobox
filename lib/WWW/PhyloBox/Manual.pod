@@ -43,11 +43,15 @@ This software was initially written at the GMOD Evolutionary Biology Hackathon
 
 =head1 LINKS
 
-http://phylobox.appspot.com
+L<http://phylobox.appspot.com>
 
-https://github.com/andrewxhill/PhyloBox/wiki
+L<https://github.com/andrewxhill/PhyloBox/wiki>
 
-http://nescent.org
+L<http://nescent.org>
+
+The PhyloJSON spec
+
+L<http://phylobox.appspot.com/phylojson/version/1>
 
 =cut
 
