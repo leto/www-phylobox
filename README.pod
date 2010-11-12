@@ -8,3 +8,5 @@ Example: L<http://2-0.latest.phylobox.appspot.com/#phylobox-2-0-f7fd33b2-932a-49
 You can click the "spinning arrows" button at the top to spin the phylogenetic tree in three dimensions.
 
 This Perl API does not depend on BioPerl, but is meant to be used with it and other Perl software.
+
+L<https://github.com/leto/www-phylobox/blob/master/lib/WWW/PhyloBox/Manual.pod>
