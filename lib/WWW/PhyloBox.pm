@@ -6,7 +6,7 @@ use Data::Dumper;
 use JSON::Any;
 use WWW::PhyloBox::Response;
 
-has base_url => (
+has api_root => (
     isa     => 'Str',
     is      => 'rw',
     default => 'http://2-0.latest.phylobox.appspot.com',
@@ -55,7 +55,7 @@ is PhyloXML, but the Newick format is also marginally supported.
 sub create {
     my ($self, %args) = @_;
     my $response = $self->ua->post(
-        $self->base_url . "/new",
+        $self->api_root . "/new",
         \%args,
     );
     my $json = $self->json->from_json( $response->content );
