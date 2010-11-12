@@ -39,7 +39,10 @@ is PhyloXML, but the Newick format is also marginally supported.
 =head1 ACKNOWLEDGEMENTS
 
 This software was initially written at the GMOD Evolutionary Biology Hackathon
-2010 at the National Evolutionary Synthesis Center (NESCent) in Durham, NC.
+2010 at the National Evolutionary Synthesis Center (NESCent,
+National Science Foundation Grant # EF-0905606
+) in Durham, NC.
+
 
 =head1 LINKS
 
