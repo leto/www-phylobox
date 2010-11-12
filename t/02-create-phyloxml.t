@@ -23,6 +23,7 @@ my $phyloxml = slurp("t/data/test.xml");
 }
 
 {
+    local $TODO = "PhyloBox does not support multiple phylogenies in one PhyloXML";
     my $phyloxml = slurp("t/data/phylo.xml");
     lives_ok {
         $phylobox->create(
