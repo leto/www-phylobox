@@ -72,11 +72,19 @@ PhyloBox is an online environment for viewing, editing, sharing, and publishing
 phylogenetic trees. The preferred data format for importing phylogenetic trees
 is PhyloXML, but the Newick format is also marginally supported.
 
+
+=head1 ACKNOWLEDGEMENTS
+
+This software was initially written at the GMOD Evolutionary Biology Hackathon
+2010 at the National Evolutionary Synthesis Center (NESCent) in Durham, NC.
+
 =head1 LINKS
 
 http://phylobox.appspot.com
 
 https://github.com/andrewxhill/PhyloBox/wiki
+
+http://nescent.org
 
 =cut
 
