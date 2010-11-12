@@ -38,6 +38,25 @@ phylogenetic trees. The preferred data format for importing phylogenetic trees
 is PhyloXML, but the Newick format is also marginally supported.
 
 
+=head1 EXAMPLES
+
+This example sets the API root, in the case of the developer wanting to talk to a different PhyloBox instance. It also uses a zipped remote PhyloXML file.
+
+    # this is the default api_root
+    my $phylobox = WWW::PhyloBox->new(
+        api_root => 'http://2-0.latest.phylobox.appspot.com'
+    );
+
+    # this creates a phylogenetic tree from a remote zipped file
+    # Zipped Newick files are also supported
+    my $tree = $phylobox->create(
+        phyloUrl => "http://example.com/phylo.xml.zip",
+        response => "key",
+        name     => "Moose speciation",
+    );
+    print $tree->name . " tree is at " . $tree->url . "\n";
+
+
 =head1 ACKNOWLEDGEMENTS
 
 This software was initially written at the GMOD Evolutionary Biology Hackathon
