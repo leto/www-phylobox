@@ -1,0 +1,10 @@
+
+=head1 WWW::PhyloBox
+
+This module provides a Perl API to PhyloBox, which is an online environment to manipulate Phylogenetic trees.
+
+Example: L<http://2-0.latest.phylobox.appspot.com/#phylobox-2-0-f7fd33b2-932a-497a-9652-4732e1a3110f>
+
+You can click the "spinning arrows" button at the top to spin the phylogenetic tree in three dimensions.
+
+This Perl API does not depend on BioPerl, but is meant to be used with it and other Perl software.
