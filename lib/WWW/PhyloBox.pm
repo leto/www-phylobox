@@ -9,7 +9,7 @@ use WWW::PhyloBox::Response;
 has api_root => (
     isa     => 'Str',
     is      => 'rw',
-    default => 'http://2-0.latest.phylobox.appspot.com',
+    default => 'http://2-0.latest.phylobox.appspot.com/new',
 );
 has useragent_class => (
     isa     => 'Str',
@@ -33,8 +33,6 @@ has ua => (
     is => 'rw'
 );
 
-# ABSTRACT: eats babies
-
 =head1 NAME
 
 WWW::PhyloBox - Perl interface to phylobox.appspot.com
@@ -50,7 +48,6 @@ phylogenetic trees. The preferred data format for importing phylogenetic trees
 is PhyloXML, but the Newick format is also marginally supported.
 
 =cut
-
 
 sub create {
     my ($self, %args) = @_;
