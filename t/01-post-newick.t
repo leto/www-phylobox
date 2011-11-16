@@ -9,7 +9,7 @@ my $newick   = slurp("t/data/foo.newick");
 
 isa_ok($phylobox, 'WWW::PhyloBox');
 
-lives_ok {
+lives_ok sub {
     $phylobox->create(
         phyloFile => $newick,
         response  => "key",
