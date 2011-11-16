@@ -51,11 +51,15 @@ is PhyloXML, but the Newick format is also marginally supported.
 
 sub create {
     my ($self, %args) = @_;
-    my $response = $self->ua->post(
-        $self->api_root . "/new",
-        \%args,
-    );
-    my $json = $self->json->from_json( $response->content );
+    my $response = $self->ua->post( $self->api_root, \%args );
+    my $content  = $response->content;
+
+    unless ($content) {
+        warn "Got empty content back from Phylobox API! Dumping response:";
+        use Data::Dumper; die Dumper [ $response ];
+    }
+
+    my $json = $self->json->from_json( $content );
     return WWW::PhyloBox::Response->new( json => $json );
 }
 
