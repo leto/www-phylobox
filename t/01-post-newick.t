@@ -3,6 +3,8 @@ use WWW::PhyloBox;
 use File::Slurp qw/slurp/;
 
 plan( tests => 3 );
+use lib qw(t/lib);
+#use Mock::LWP::UserAgent;
 
 my $phylobox = WWW::PhyloBox->new;
 my $newick   = slurp("t/data/foo.newick");
